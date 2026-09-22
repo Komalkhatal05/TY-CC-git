@@ -1,14 +1,17 @@
 name: "Daily Cron jobs"
-on: 
+
+on:
   schedule:
-    - cron: '0 3 * * *'
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
 jobs:
   run-job:
     runs-on: ubuntu-latest
-    steps:
-     - name: Checkout Code
-       uses: actions/checkout@v4
-     - name: Run Script
-       run: echo "Cron Job is running at $(date)"   
 
-         
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Script
+        run: echo "Cron Job is running at $(date)"
