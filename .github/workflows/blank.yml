@@ -1,5 +1,4 @@
 name: "Daily Cron jobs"
-
 on:
   schedule:
     - cron: "0 3 * * *"
